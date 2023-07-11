@@ -2,22 +2,21 @@
 include 'functions.php';
 $pdo = pdo_connect_mysql();
 $msg = '';
-// Check if POST data is not empty
+// Periksa apakah data POST tidak kosong
 if (!empty($_POST)) {
-    // Post data not empty insert a new record
-    // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
+    // Atur variabel yang akan disisipkan, kita harus memeriksa apakah variabel POST ada jika tidak kita dapat mengaturnya menjadi kosong
     $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
-    // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
+    // Periksa apakah variabel "nama" POST ada, jika tidak default nilainya kosong, pada dasarnya sama untuk semua variabel
     $nama = isset($_POST['nama']) ? $_POST['nama'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $telp = isset($_POST['telp']) ? $_POST['telp'] : '';
     $isi_keluhan = isset($_POST['isi_keluhan']) ? $_POST['isi_keluhan'] : '';
 
-    // Insert new record into the contacts table
+    // Masukkan catatan baru ke dalam tabel kontak
     $stmt = $pdo->prepare('INSERT INTO kontak VALUES (?, ?, ?, ?, ?)');
     $stmt->execute([$id, $nama, $email, $telp, $isi_keluhan]);
-    // Output message
-    $msg = 'Created Successfully!';
+    // Pesan keluaran 
+    $msg = 'Berhasil Membuat Laporan!';
 }
 ?>
 

@@ -2,22 +2,22 @@
 include 'functions.php';
 $pdo = pdo_connect_mysql();
 $msg = '';
-// Check if the contact id exists, for example update.php?id=1 will get the contact with the id of 1
+// Periksa apakah id kontak ada
 if (isset($_GET['id'])) {
     if (!empty($_POST)) {
-        // This part is similar to the create.php, but instead we update a record and not insert
+        // Bagian ini mirip dengan create.php, tetapi sebagai gantinya ini untuk mengupdate record bukan insert
         $id = isset($_POST['id']) ? $_POST['id'] : NULL;
         $nama = isset($_POST['nama']) ? $_POST['nama'] : '';
         $email = isset($_POST['email']) ? $_POST['email'] : '';
         $telp = isset($_POST['telp']) ? $_POST['telp'] : '';
         $isi_keluhan = isset($_POST['isi_keluhan']) ? $_POST['isi_keluhan'] : '';
         
-        // Update the record
+        // ini skrip untuk memperbarui data
         $stmt = $pdo->prepare('UPDATE kontak SET id = ?, nama = ?, email = ?, telp = ?, isi_keluhan = ? WHERE id = ?');
         $stmt->execute([$id, $nama, $email, $telp, $isi_keluhan, $_GET['id']]);
-        $msg = 'Updated Successfully!';
+        $msg = 'Update Laporan Berhasil!';
     }
-    // Get the contact from the contacts table
+    // Dapatkan kontak dari tabel kontak
     $stmt = $pdo->prepare('SELECT * FROM kontak WHERE id = ?');
     $stmt->execute([$_GET['id']]);
     $contact = $stmt->fetch(PDO::FETCH_ASSOC);
