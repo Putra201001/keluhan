@@ -6,7 +6,7 @@
   	-moz-osx-font-smoothing: grayscale;
 }
 body {
-  	background-color: #ffffff;
+  	background-color: white;
   	margin: 0;
 }
 .navtop {
@@ -200,7 +200,7 @@ body {
 }
 body{
 	font-family: sans-serif;
-	background: #d5f0f3;
+	background: #ffffff;
 }
  
 h1{

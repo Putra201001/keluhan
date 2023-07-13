@@ -42,7 +42,4 @@ if (!empty($_POST)) {
     <p><?=$msg?></p>
     <?php endif; ?>
 </div>
-<footer class="footer">
-	<p>Keluhan Pelanggan</p>
-	<p>Copyright© Putra Pangestu - 2023</p>
-</footer>
+<?=template_footer()?>
