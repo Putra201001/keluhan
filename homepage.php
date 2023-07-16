@@ -9,5 +9,6 @@ include 'functions.php';
 <body>
 <div class="content">
 	<h2>Selamat Datang! Admin</h2>
+	<center><img src="gambar/cs.jpg"></center>
 </div>
 </body>
