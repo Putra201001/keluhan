@@ -24,8 +24,8 @@ echo <<<EOT
 	<body>
     <nav class="navtop">
     	<div>
-            <a href="index.php"><i class="fas fa-home"></i>Home</a>
-    		<a href="read.php"><i class="fas fa-address-book"></i>Keluhan</a>
+            <a href="index.php"><i class="fas fa-home"></i>Logout</a>
+    		<a href="read.php"><i class="fas fa-address-book"></i>Laporan</a>
     	</div>
     </nav>
 EOT;
