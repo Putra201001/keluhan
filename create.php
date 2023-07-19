@@ -12,7 +12,7 @@ if (!empty($_POST)) {
     $telp = isset($_POST['telp']) ? $_POST['telp'] : '';
     $isi_keluhan = isset($_POST['isi_keluhan']) ? $_POST['isi_keluhan'] : '';
 
-    // Masukkan catatan baru ke dalam tabel kontak
+    // Masukkan laporan baru ke dalam tabel kontak
     $stmt = $pdo->prepare('INSERT INTO kontak VALUES (?, ?, ?, ?, ?)');
     $stmt->execute([$id, $nama, $email, $telp, $isi_keluhan]);
     // Pesan keluaran 

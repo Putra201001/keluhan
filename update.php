@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
         $telp = isset($_POST['telp']) ? $_POST['telp'] : '';
         $isi_keluhan = isset($_POST['isi_keluhan']) ? $_POST['isi_keluhan'] : '';
         
-        // ini skrip untuk memperbarui data
+        // ini skrip untuk memperbarui data sesuai id
         $stmt = $pdo->prepare('UPDATE kontak SET id = ?, nama = ?, email = ?, telp = ?, isi_keluhan = ? WHERE id = ?');
         $stmt->execute([$id, $nama, $email, $telp, $isi_keluhan, $_GET['id']]);
         $msg = 'Update Laporan Berhasil!';

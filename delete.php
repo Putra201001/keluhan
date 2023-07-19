@@ -14,12 +14,12 @@ if (isset($_GET['id'])) {
     // Pastikan user mengkonfirmasi jika ingin mendelete
     if (isset($_GET['confirm'])) {
         if ($_GET['confirm'] == 'yes') {
-            // User mengklik tombol "ya", data di hapus
+            // jika user mengklik tombol "ya", data di hapus
             $stmt = $pdo->prepare('DELETE FROM kontak WHERE id = ?');
             $stmt->execute([$_GET['id']]);
             $msg = 'Kamu Baru Saja Menghapus Laporan Tersebut!';
         } else {
-            // User mengklik tombol "Tidak", akan diarahkan kembali ke halaman read
+            // jika usser mengklik tombol "Tidak", akan diarahkan kembali ke halaman read
             header('Location: read.php');
             exit;
         }

@@ -24,12 +24,12 @@ if (isset($_POST['submit'])) {
 
     // Memeriksa jumlah baris hasil query
     if (mysqli_num_rows($result) == 1) {
-        // Login berhasil, arahkan pengguna ke halaman selamat datang
+        // Login berhasil, arahkan pengguna ke halaman homepage
         header("Location: homepage.php");
         exit();
     } else {
         // Login gagal, tampilkan pesan kesalahan
-        $error = "Username atau password salah.";
+        $error = "email atau password salah.";
     }
 }
 ?>
